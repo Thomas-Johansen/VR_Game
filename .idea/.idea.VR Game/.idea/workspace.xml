@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="" />
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="initial commit with basic openXR imports">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/Presets/XRI Default Gaze Controller.preset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/Presets/XRI Default Gaze Controller.preset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,10 @@
     "accountId": "8f110f86-8ba9-480c-b8a5-ade97dc605b9"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
@@ -99,13 +107,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715023410495</updated>
-      <workItem from="1715023412059" duration="579000" />
+      <workItem from="1715023412059" duration="3273000" />
     </task>
+    <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
+      <option name="closed" value="true" />
+      <created>1715024223042</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1715024223042</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -115,5 +132,7 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="initial commit with basic openXR imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit with basic openXR imports" />
   </component>
 </project>

@@ -478,7 +478,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_UIScrollAction.m_Action.m_Id
-    value: 
+    value: 4815e8d0-a814-4034-ae59-e6753b8766b2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_UIScrollAction.m_Action.m_Processors
@@ -745,3 +745,8 @@ Preset:
     value: 0.5
     objectReference: {fileID: 0}
   m_ExcludedProperties: []
+  m_CoupledType:
+    m_NativeTypeID: 0
+    m_ManagedTypePPtr: {fileID: 0}
+    m_ManagedTypeFallback: 
+  m_CoupledProperties: []
