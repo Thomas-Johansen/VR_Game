@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Added player movement script, not completed yet">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/9c41c7e3-616c-473b-a37e-37a9de6e8edd_2.lab_solution.zip.edd/cars_demo/Assets/MoveCar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/5aa90b83-2643-4de3-ba71-130d51873fc9_2.lab_solution.zip.fc9/cars_demo/Assets/MoveCar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Controllers/ActionBasedController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Locomotion/LocomotionSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -108,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715023410495</updated>
       <workItem from="1715023412059" duration="3838000" />
-      <workItem from="1715139296265" duration="1401000" />
+      <workItem from="1715139296265" duration="5316000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -124,7 +128,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1715049223809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Added player movement script, not completed yet">
+      <option name="closed" value="true" />
+      <created>1715140808169</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1715140808169</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +153,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial commit with basic openXR imports" />
     <MESSAGE value="Added basic player object, containing XR origin, collider, rigidbody and controller models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic player object, containing XR origin, collider, rigidbody and controller models" />
+    <MESSAGE value="Added player movement script, not completed yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added player movement script, not completed yet" />
   </component>
 </project>
