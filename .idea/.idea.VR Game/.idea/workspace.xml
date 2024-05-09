@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Basic movement completed. Emphasis on basic, the player can use left thumbstick to move in the direction they are looking">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +28,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Controllers/ActionBasedController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Locomotion/LocomotionSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -109,7 +110,7 @@
       <updated>1715023410495</updated>
       <workItem from="1715023412059" duration="3838000" />
       <workItem from="1715139296265" duration="6244000" />
-      <workItem from="1715189204032" duration="3075000" />
+      <workItem from="1715189204032" duration="10256000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -139,7 +140,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1715145529102</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="Basic movement completed. Emphasis on basic, the player can use left thumbstick to move in the direction they are looking">
+      <option name="closed" value="true" />
+      <created>1715204333209</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1715204333209</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +167,7 @@
     <MESSAGE value="Added basic player object, containing XR origin, collider, rigidbody and controller models" />
     <MESSAGE value="Added player movement script, not completed yet" />
     <MESSAGE value="In short, problems. To expand... transform is affecting camera not player transform" />
-    <option name="LAST_COMMIT_MESSAGE" value="In short, problems. To expand... transform is affecting camera not player transform" />
+    <MESSAGE value="Basic movement completed. Emphasis on basic, the player can use left thumbstick to move in the direction they are looking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic movement completed. Emphasis on basic, the player can use left thumbstick to move in the direction they are looking" />
   </component>
 </project>
