@@ -41,9 +41,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float currentRotation = rotationTransform.eulerAngles.y;
         float yawRotation = playerCamera.transform.eulerAngles.y;
-        Quaternion playerRotation = Quaternion.Euler(0, yawRotation, 0);
-        rotationTransform.rotation = playerRotation;
+        float newRotation = yawRotation - currentRotation;
+        //rotationTransform.Rotate(0, newRotation, 0);
+
+        float xRot = transform.eulerAngles.x;
+        float yRot = transform.eulerAngles.y;
+        float zRot = transform.eulerAngles.z;
+        Quaternion newRotation2 = Quaternion.Euler(xRot, (yRot + yawRotation), zRot);
+        rotationTransform.rotation = newRotation2;
         
         
    
