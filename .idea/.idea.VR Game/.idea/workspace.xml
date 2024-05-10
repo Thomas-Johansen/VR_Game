@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="So close but so far">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="First actuall working version of walk logic, just using better vector math">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/XR/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
@@ -114,7 +114,7 @@
       <workItem from="1715023412059" duration="3838000" />
       <workItem from="1715139296265" duration="6244000" />
       <workItem from="1715189204032" duration="10471000" />
-      <workItem from="1715281148417" duration="12629000" />
+      <workItem from="1715281148417" duration="13700000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -172,7 +172,14 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1715297845177</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="First actuall working version of walk logic, just using better vector math">
+      <option name="closed" value="true" />
+      <created>1715300842524</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1715300842524</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +203,7 @@
     <MESSAGE value="Wops, had not actually added the Player movement script to earlier commits. Anyhow, tried fixing headset rotation also rotating the player object, not working yet" />
     <MESSAGE value="1 step forwards 2 steps back" />
     <MESSAGE value="So close but so far" />
-    <option name="LAST_COMMIT_MESSAGE" value="So close but so far" />
+    <MESSAGE value="First actuall working version of walk logic, just using better vector math" />
+    <option name="LAST_COMMIT_MESSAGE" value="First actuall working version of walk logic, just using better vector math" />
   </component>
 </project>
