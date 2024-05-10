@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     public Rigidbody playerBody;
-    public Transform rotationTransform;
    
     [SerializeField] private Camera playerCamera;
 
@@ -41,31 +40,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentRotation = rotationTransform.eulerAngles.y;
-        float yawRotation = playerCamera.transform.eulerAngles.y;
-        float newRotation = yawRotation - currentRotation;
-        //rotationTransform.Rotate(0, newRotation, 0);
-
-        float xRot = transform.eulerAngles.x;
-        float yRot = transform.eulerAngles.y;
-        float zRot = transform.eulerAngles.z;
-        Quaternion newRotation2 = Quaternion.Euler(xRot, (yRot + yawRotation), zRot);
-        rotationTransform.rotation = newRotation2;
         
-        
-   
-        
-        
-        Vector3 right = playerCamera.transform.right;
+        Vector3 playerUp = transform.up;
         Vector3 direction = playerCamera.transform.forward;
-        direction.y = 0;
-        direction.Normalize();
-        direction += rotationTransform.transform.forward;
-        direction.Normalize();
+        Vector3 right = Vector3.Cross(playerUp, direction).normalized;
+        Vector3 correctedDirection = Vector3.Cross(Vector3.right, playerUp).normalized;
         
         float forwards = _moveVector.y;
         float sideways = _moveVector.x;
-        Vector3 movement = (direction * forwards + right * sideways);
+        Vector3 movement = (correctedDirection * forwards + right * sideways);
         playerBody.AddForce((movement));
         
        
