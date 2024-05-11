@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Basic terrain for Lookout" />
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Found minot code error that bugged out the whole movement logic">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,8 +29,6 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/XR/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -113,6 +114,7 @@
       <workItem from="1715139296265" duration="6244000" />
       <workItem from="1715189204032" duration="10471000" />
       <workItem from="1715281148417" duration="14017000" />
+      <workItem from="1715411221284" duration="1798000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -184,7 +186,14 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1715312320279</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="Found minot code error that bugged out the whole movement logic">
+      <option name="closed" value="true" />
+      <created>1715411353200</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1715411353200</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +219,7 @@
     <MESSAGE value="So close but so far" />
     <MESSAGE value="First actuall working version of walk logic, just using better vector math" />
     <MESSAGE value="Basic terrain for Lookout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic terrain for Lookout" />
+    <MESSAGE value="Found minot code error that bugged out the whole movement logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Found minot code error that bugged out the whole movement logic" />
   </component>
 </project>

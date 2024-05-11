@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _currentSpeed;
     private Vector3 _deltaSpeed;
 
-    private int _walkSpeed = 100;
+    private int _walkSpeed = 500;
 
 
     public Rigidbody playerBody;
@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
+
+    }
+
+    private void FixedUpdate()
+    {
         Vector3 playerUp = transform.up;
         Vector3 direction = playerCamera.transform.forward;
         Vector3 right = Vector3.Cross(playerUp, direction).normalized;
@@ -48,10 +53,8 @@ public class PlayerMovement : MonoBehaviour
         
         float forwards = _moveVector.y;
         float sideways = _moveVector.x;
-        Vector3 movement = (correctedDirection * forwards + right * sideways);
-        playerBody.AddForce((movement));
-        
-       
+        Vector3 movement = (correctedDirection * forwards + right * sideways).normalized;
+        playerBody.AddForce((movement * (Time.fixedDeltaTime * _walkSpeed)));
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext context)
