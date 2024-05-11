@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Forgot to add materials to commit when making the lookout model" />
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="More modeling on the lookout" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +112,7 @@
       <workItem from="1715139296265" duration="6244000" />
       <workItem from="1715189204032" duration="10471000" />
       <workItem from="1715281148417" duration="14017000" />
-      <workItem from="1715411221284" duration="2109000" />
+      <workItem from="1715411221284" duration="2723000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -205,7 +205,14 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1715413339853</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL−00014" summary="More modeling on the lookout">
+      <option name="closed" value="true" />
+      <created>1715417432335</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1715417432335</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +241,7 @@
     <MESSAGE value="Found minot code error that bugged out the whole movement logic" />
     <MESSAGE value="Changed movement logic to use FixedUpdate instead of Update, and to make use of Time.fixedDeltaTime" />
     <MESSAGE value="Forgot to add materials to commit when making the lookout model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot to add materials to commit when making the lookout model" />
+    <MESSAGE value="More modeling on the lookout" />
+    <option name="LAST_COMMIT_MESSAGE" value="More modeling on the lookout" />
   </component>
 </project>
