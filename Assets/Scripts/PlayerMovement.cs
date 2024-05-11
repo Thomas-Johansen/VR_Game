@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 playerUp = transform.up;
         Vector3 direction = playerCamera.transform.forward;
         Vector3 right = Vector3.Cross(playerUp, direction).normalized;
-        Vector3 correctedDirection = Vector3.Cross(Vector3.right, playerUp).normalized;
+        Vector3 correctedDirection = Vector3.Cross(right, playerUp).normalized;
         
         float forwards = _moveVector.y;
         float sideways = _moveVector.x;

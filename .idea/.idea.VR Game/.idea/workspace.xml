@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="First actuall working version of walk logic, just using better vector math">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Basic terrain for Lookout" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +112,7 @@
       <workItem from="1715023412059" duration="3838000" />
       <workItem from="1715139296265" duration="6244000" />
       <workItem from="1715189204032" duration="10471000" />
-      <workItem from="1715281148417" duration="13700000" />
+      <workItem from="1715281148417" duration="14017000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -179,7 +177,14 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1715300842524</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Basic terrain for Lookout">
+      <option name="closed" value="true" />
+      <created>1715312320279</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1715312320279</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +209,7 @@
     <MESSAGE value="1 step forwards 2 steps back" />
     <MESSAGE value="So close but so far" />
     <MESSAGE value="First actuall working version of walk logic, just using better vector math" />
-    <option name="LAST_COMMIT_MESSAGE" value="First actuall working version of walk logic, just using better vector math" />
+    <MESSAGE value="Basic terrain for Lookout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic terrain for Lookout" />
   </component>
 </project>
