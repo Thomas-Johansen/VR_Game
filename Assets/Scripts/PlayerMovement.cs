@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _doJump = false;
     private int _walkSpeed = 500;
     private int _jumpStrength = 250;
+    private float _maxSpeed = 10;
 
 
     public Rigidbody playerBody;
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!_isFlying) // Walking Code
         {
-            if (_leftMoveVector != Vector2.zero)
+            if (_leftMoveVector != Vector2.zero && playerBody.velocity.magnitude < _maxSpeed)
             {
                 Vector3 playerUp = transform.up;
                 Vector3 direction = playerCamera.transform.forward;
@@ -94,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
             if (_doJump)
             {
                 _doJump = false;
-                Debug.Log("Jumping");
                 playerBody.AddForce(transform.up * _jumpStrength);
             }
             
