@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             
             
             //Gravity
-            Vector3 planetCentre = new Vector3(0, -50, -70);
+            Vector3 planetCentre = new Vector3(0, -75, -100);
 
             // Calculate the direction from the player to the planet
             Vector3 gravityDirection = (planetCentre - transform.position).normalized;
