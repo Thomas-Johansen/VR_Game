@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private int _walkSpeed = 500;
     private int _jumpStrength = 250;
     private float _maxSpeed = 10;
+    private float _gravityForce = 490.5f;
+    private float _rotationSpeed = 1.0f;
 
 
     public Rigidbody playerBody;
@@ -79,13 +81,35 @@ public class PlayerMovement : MonoBehaviour
 
         if (!_isFlying) // Walking Code
         {
+            //Multiple use varables
+            
+            
+            
+            //Gravity
+            Vector3 planetCentre = new Vector3(0, -50, -70);
+
+            // Calculate the direction from the player to the planet
+            Vector3 gravityDirection = (planetCentre - transform.position).normalized;
+
+            // Calculate the target up vector (opposite of gravity direction)
+            Vector3 targetUp = -gravityDirection;
+
+            // Rotate the player to align its up vector with the target up vector
+            UnityEngine.Quaternion targetRotation = UnityEngine.Quaternion.FromToRotation(transform.up, targetUp) * transform.rotation;
+
+            // Apply the rotation smoothly (optional)
+            transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+            
+            playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce));
+            
+            //Movement
             if (_leftMoveVector != Vector2.zero && playerBody.velocity.magnitude < _maxSpeed)
             {
                 Vector3 playerUp = transform.up;
                 Vector3 direction = playerCamera.transform.forward;
                 Vector3 right = Vector3.Cross(playerUp, direction).normalized;
                 Vector3 correctedDirection = Vector3.Cross(right, playerUp).normalized;
-        
+                
                 float forwards = _leftMoveVector.y;
                 float sideways = _leftMoveVector.x;
                 Vector3 movement = (correctedDirection * forwards + right * sideways).normalized;
