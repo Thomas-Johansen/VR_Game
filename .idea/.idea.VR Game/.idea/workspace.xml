@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Added skybox, and worked on post processing shader for atmosphere effect">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PostTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PostTest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/LaugeShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/LaugeShader.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PostTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Shaders/LaugeShader.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/XR/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Controllers/ActionBasedController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -120,7 +119,7 @@
       <workItem from="1715411221284" duration="8268000" />
       <workItem from="1715496457552" duration="6152000" />
       <workItem from="1716081213726" duration="8897000" />
-      <workItem from="1716222444523" duration="8590000" />
+      <workItem from="1716222444523" duration="11019000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -255,7 +254,14 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1716090033390</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="Added skybox, and worked on post processing shader for atmosphere effect">
+      <option name="closed" value="true" />
+      <created>1716251456409</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1716251456409</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +296,7 @@
     <MESSAGE value="Started implementation of planetary gravity" />
     <MESSAGE value="Added some basic horrendus planet atmosphere" />
     <MESSAGE value="Started tinkering with proper atmos shader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started tinkering with proper atmos shader" />
+    <MESSAGE value="Added skybox, and worked on post processing shader for atmosphere effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added skybox, and worked on post processing shader for atmosphere effect" />
   </component>
 </project>

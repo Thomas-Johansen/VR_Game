@@ -15,8 +15,10 @@ public class PlayerMovement : MonoBehaviour
     private int _walkSpeed = 500;
     private int _jumpStrength = 250;
     private float _maxSpeed = 10;
+    public float brakeStrength = 5.0f;
     private float _gravityForce = 490.5f;
     private float _rotationSpeed = 1.0f;
+    private double hoverNumber = 0;
 
 
     public Rigidbody playerBody;
@@ -125,7 +127,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else // Flying Code
         {
-            
+            //Break
+            if (playerBody.velocity.magnitude > 2)
+            {
+                playerBody.velocity =
+                    Vector3.Lerp(playerBody.velocity, Vector3.zero, brakeStrength * Time.fixedDeltaTime);
+            }
+            //Hover
+            else if (playerBody.velocity.magnitude < 2)
+            {
+                playerBody.velocity = (transform.up * ((float)Math.Sin(hoverNumber) * 0.1f));
+                hoverNumber += 0.05;
+                if (hoverNumber >= 2 * Mathf.PI)
+                {
+                    hoverNumber -= 2 * Mathf.PI;
+                }
+            }
+                
         }
         
         //Universal Controls
@@ -169,7 +187,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnLeftSecondaryPerformed(InputAction.CallbackContext context)
     {
         _leftSecondary = true;
-        
+        _isFlying = !_isFlying;
+
     }
     
     private void OnLeftSecondaryCanceled(InputAction.CallbackContext context)
