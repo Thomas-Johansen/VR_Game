@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Added some basic horrendus planet atmosphere">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/LaugeShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/LaugeShader.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +31,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/PostTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PostTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/XR/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Controllers/ActionBasedController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -119,7 +119,8 @@
       <workItem from="1715281148417" duration="14017000" />
       <workItem from="1715411221284" duration="8268000" />
       <workItem from="1715496457552" duration="6152000" />
-      <workItem from="1716081213726" duration="7997000" />
+      <workItem from="1716081213726" duration="8897000" />
+      <workItem from="1716222444523" duration="8590000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -247,7 +248,14 @@
       <option name="presentableId" value="LOCAL−00018" />
       <updated>1716088831153</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL−00019" summary="Started tinkering with proper atmos shader">
+      <option name="closed" value="true" />
+      <created>1716090033390</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1716090033390</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +289,7 @@
     <MESSAGE value="Added basic jump in walk mode. (It's a game where you can fly, being able to jump while in the air isn't to big a problem)" />
     <MESSAGE value="Started implementation of planetary gravity" />
     <MESSAGE value="Added some basic horrendus planet atmosphere" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some basic horrendus planet atmosphere" />
+    <MESSAGE value="Started tinkering with proper atmos shader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started tinkering with proper atmos shader" />
   </component>
 </project>
