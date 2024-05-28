@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             
             
             //Gravity
-            Vector3 planetCentre = new Vector3(0, -75, -100);
+            Vector3 planetCentre = new Vector3(0, 0, 0);
 
             // Calculate the direction from the player to the planet
             Vector3 gravityDirection = (planetCentre - transform.position).normalized;
@@ -100,7 +100,8 @@ public class PlayerMovement : MonoBehaviour
             UnityEngine.Quaternion targetRotation = UnityEngine.Quaternion.FromToRotation(transform.up, targetUp) * transform.rotation;
 
             // Apply the rotation smoothly (optional)
-            transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+            //transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+            transform.rotation = targetRotation;
             
             playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce));
             

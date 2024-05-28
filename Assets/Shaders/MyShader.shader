@@ -45,7 +45,10 @@ Shader "MyShader"
             sampler2D _BlueNoise;
 			sampler2D _MainTex;
 			sampler2D _BakedOpticalDepth;
-			sampler2D _CameraDepthTexture;
+            
+            UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
+
+            
             float4 _MainTex_ST;
 
             struct v2f {

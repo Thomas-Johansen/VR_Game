@@ -38,6 +38,11 @@ public class PostTest : MonoBehaviour
 
     void Start()
     {
+        Camera thisCamera =  GetComponent<Camera>();
+        thisCamera.depthTextureMode = DepthTextureMode.Depth;
+        
+        
+        
         if (postProcessShader == null)
         {
             Debug.LogError("No shader assigned!", this);
