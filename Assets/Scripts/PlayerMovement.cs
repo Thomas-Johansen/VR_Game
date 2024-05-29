@@ -17,8 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private float _maxSpeed = 10;
     public float brakeStrength = 5.0f;
     private float _gravityForce = 490.5f;
-    private float _rotationSpeed = 1.0f;
-    private double hoverNumber = 0;
+    private double _hoverNumber = 0;
+    private float _pitchSpeed = 30f;
+    private float _rollSpeed = 30f;
 
 
     public Rigidbody playerBody;
@@ -34,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     private bool _leftSecondary;
     private InputAction _rightMoveAction;
     private Vector2 _rightMoveVector;
+    private InputAction _rightPrimaryAction;
+    private bool _rightPrimary;
+    private InputAction _rightSecondaryAction;
+    private bool _rightSecondary;
 
 
     private void Awake()
@@ -47,6 +52,14 @@ public class PlayerMovement : MonoBehaviour
         _rightMoveAction.Enable();
         _rightMoveAction.performed += OnRightMovementPerformed;
         _rightMoveAction.canceled += OnRightMovementCanceled;
+        _rightPrimaryAction = rightHandLocomotion.FindAction("A Button");
+        _rightPrimaryAction.Enable();
+        _rightPrimaryAction.performed += OnRightPrimaryPerformed;
+        _rightPrimaryAction.canceled += OnRightPrimaryCanceled;
+        _rightSecondaryAction = rightHandLocomotion.FindAction("B Button");
+        _rightSecondaryAction.Enable();
+        _rightSecondaryAction.performed += OnRightSecondaryPerformed;
+        _rightSecondaryAction.canceled += OnRightSecondaryCanceled;
         
         // Left Hand
         InputActionMap leftHandLocomotion = inputActions.FindActionMap("XRI LeftHand Locomotion");
@@ -137,12 +150,35 @@ public class PlayerMovement : MonoBehaviour
             //Hover
             else if (playerBody.velocity.magnitude < 2)
             {
-                playerBody.velocity = (transform.up * ((float)Math.Sin(hoverNumber) * 0.1f));
-                hoverNumber += 0.05;
-                if (hoverNumber >= 2 * Mathf.PI)
+                playerBody.velocity = (transform.up * ((float)Math.Sin(_hoverNumber) * 0.1f));
+                _hoverNumber += 0.05;
+                if (_hoverNumber >= 2 * Mathf.PI)
                 {
-                    hoverNumber -= 2 * Mathf.PI;
+                    _hoverNumber -= 2 * Mathf.PI;
                 }
+            }
+            
+            //Pitch and roll
+            if (_rightMoveVector != Vector2.zero)
+            {
+                // Get the pitch and roll from the thumbstick input
+                float pitch = _rightMoveVector.y * _pitchSpeed * Time.fixedDeltaTime;
+                float roll = _rightMoveVector.x * _rollSpeed * Time.fixedDeltaTime;
+                
+                // Get the camera's forward and right vectors
+                Vector3 cameraForward = Vector3.ProjectOnPlane(playerCamera.transform.forward, playerBody.transform.up).normalized;
+                Vector3 cameraRight = Vector3.ProjectOnPlane(playerCamera.transform.right, playerBody.transform.up).normalized;
+                
+
+                // Normalize the vectors
+                cameraForward.Normalize();
+                cameraRight.Normalize();
+                
+                // Calculate pitch and roll rotations
+                UnityEngine.Quaternion pitchRotation = UnityEngine.Quaternion.AngleAxis(pitch, cameraRight);
+                UnityEngine.Quaternion rollRotation = UnityEngine.Quaternion.AngleAxis(roll, -cameraForward);
+                
+                playerBody.MoveRotation(playerBody.rotation * pitchRotation * rollRotation);
             }
                 
         }
@@ -162,6 +198,29 @@ public class PlayerMovement : MonoBehaviour
         _rightMoveVector = Vector2.zero;
     }
     
+    private void OnRightPrimaryPerformed(InputAction.CallbackContext context)
+    {
+        _rightPrimary = true;
+        _doJump = true;
+    }
+
+    private void OnRightPrimaryCanceled(InputAction.CallbackContext context)
+    {
+        _rightPrimary = false;
+        _doJump = false; //Edge case
+    }
+
+    private void OnRightSecondaryPerformed(InputAction.CallbackContext context)
+    {
+        _rightSecondary = true;
+        _isFlying = !_isFlying;
+    }
+
+    private void OnRightSecondaryCanceled(InputAction.CallbackContext context)
+    {
+        _rightSecondary = false;
+    }
+    
     //LeftHand
     private void OnLeftMovementPerformed(InputAction.CallbackContext context)
     {
@@ -176,19 +235,16 @@ public class PlayerMovement : MonoBehaviour
     private void OnLeftPrimaryPerformed(InputAction.CallbackContext context)
     {
         _leftPrimary = true;
-        _doJump = true;
     }
     
     private void OnLeftPrimaryCanceled(InputAction.CallbackContext context)
     {
         _leftPrimary = false;
-        _doJump = false; //Edge case
     }
     
     private void OnLeftSecondaryPerformed(InputAction.CallbackContext context)
     {
         _leftSecondary = true;
-        _isFlying = !_isFlying;
 
     }
     
