@@ -7706,13 +7706,16 @@ MonoBehaviour:
   _walkSpeed: 500
   _jumpStrength: 250
   _maxSpeed: 10
-  brakeStrength: 0.5
-  hardBrakeStrength: 1
+  _brakeStrength: 0.5
+  _hardbrakeStrength: 2.5
   _gravityForce: 490.5
   _pitchSpeed: 30
   _rollSpeed: 30
   _manoverSpeed: 100
+  _flightSpeed: 200
   playerBody: {fileID: 1403076350}
+  leftController: {fileID: 2061810756}
+  rightController: {fileID: 12645145}
   playerCamera: {fileID: 1892902769}
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1439749186
