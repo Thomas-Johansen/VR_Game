@@ -12,17 +12,23 @@ public class PlayerMovement : MonoBehaviour
 {
     private bool _isFlying = false;
     private bool _doJump = false;
-    private int _walkSpeed = 500;
-    private int _jumpStrength = 250;
-    private float _maxSpeed = 10;
-    public float brakeStrength = 5.0f;
-    private float _gravityForce = 490.5f;
     private double _hoverNumber = 0;
-    private float _pitchSpeed = 30f;
-    private float _rollSpeed = 30f;
+    
+    [SerializeField]private int _walkSpeed = 500;
+    [SerializeField]private int _jumpStrength = 250;
+    [SerializeField]private float _maxSpeed = 10;
+    [SerializeField]private float _brakeStrength = 0.5f;
+    [SerializeField]private float _hardbrakeStrength = 2.5f;
+    [SerializeField]private float _gravityForce = 490.5f;
+    [SerializeField]private float _pitchSpeed = 30f;
+    [SerializeField]private float _rollSpeed = 30f;
+    [SerializeField]private float _manoverSpeed = 100f;
+    [SerializeField]private float _flightSpeed = 200f;
 
 
     public Rigidbody playerBody;
+    public Transform leftController;
+    public Transform rightController;
    
     [SerializeField] private Camera playerCamera;
 
@@ -33,12 +39,22 @@ public class PlayerMovement : MonoBehaviour
     private bool _leftPrimary;
     private InputAction _leftSecondaryAction;
     private bool _leftSecondary;
+    private InputAction _leftGrabAction;
+    private bool _leftGrab;
+    private InputAction _leftTriggerAction;
+    private bool _leftTrigger;
     private InputAction _rightMoveAction;
     private Vector2 _rightMoveVector;
     private InputAction _rightPrimaryAction;
     private bool _rightPrimary;
     private InputAction _rightSecondaryAction;
     private bool _rightSecondary;
+    private InputAction _rightGrabAction;
+    private bool _rightGrab;
+    private InputAction _rightTriggerAction;
+    private bool _rightTrigger;
+    
+    
 
 
     private void Awake()
@@ -60,6 +76,14 @@ public class PlayerMovement : MonoBehaviour
         _rightSecondaryAction.Enable();
         _rightSecondaryAction.performed += OnRightSecondaryPerformed;
         _rightSecondaryAction.canceled += OnRightSecondaryCanceled;
+        _rightGrabAction = rightHandLocomotion.FindAction("Grab Move");
+        _rightGrabAction.Enable();
+        _rightGrabAction.performed += OnRightGrabPerformed;
+        _rightGrabAction.canceled += OnRightGrabCanceled;
+        _rightTriggerAction = rightHandLocomotion.FindAction("Trigger");
+        _rightTriggerAction.Enable();
+        _rightTriggerAction.performed += OnRightTriggerPerformed;
+        _rightTriggerAction.canceled += OnRightTriggerCanceled;
         
         // Left Hand
         InputActionMap leftHandLocomotion = inputActions.FindActionMap("XRI LeftHand Locomotion");
@@ -75,6 +99,14 @@ public class PlayerMovement : MonoBehaviour
         _leftSecondaryAction.Enable();
         _leftSecondaryAction.performed += OnLeftSecondaryPerformed;
         _leftSecondaryAction.canceled += OnLeftSecondaryCanceled;
+        _leftGrabAction = leftHandLocomotion.FindAction("Grab Move");
+        _leftGrabAction.Enable();
+        _leftGrabAction.performed += OnLeftGrabPerformed;
+        _leftGrabAction.canceled += OnLeftGrabCanceled;
+        _leftTriggerAction = leftHandLocomotion.FindAction("Trigger");
+        _leftTriggerAction.Enable();
+        _leftTriggerAction.performed += OnLeftTriggerPerformed;
+        _leftTriggerAction.canceled += OnLeftTriggerCanceled;
 
     }
 
@@ -141,14 +173,16 @@ public class PlayerMovement : MonoBehaviour
         }
         else // Flying Code
         {
+            bool forwardsBool = _rightGrab && _leftGrab;
+            
             //Break
-            if (playerBody.velocity.magnitude > 2)
+            if (playerBody.velocity.magnitude > 1 && _leftMoveVector == Vector2.zero && !forwardsBool)
             {
                 playerBody.velocity =
-                    Vector3.Lerp(playerBody.velocity, Vector3.zero, brakeStrength * Time.fixedDeltaTime);
+                    Vector3.Lerp(playerBody.velocity, Vector3.zero, _brakeStrength * Time.fixedDeltaTime);
             }
             //Hover
-            else if (playerBody.velocity.magnitude < 2)
+            else if (playerBody.velocity.magnitude < 1 && _leftMoveVector == Vector2.zero && !forwardsBool)
             {
                 playerBody.velocity = (transform.up * ((float)Math.Sin(_hoverNumber) * 0.1f));
                 _hoverNumber += 0.05;
@@ -156,6 +190,12 @@ public class PlayerMovement : MonoBehaviour
                 {
                     _hoverNumber -= 2 * Mathf.PI;
                 }
+            }
+            //Hard Brake
+            if (_rightPrimary)
+            {
+                playerBody.velocity =
+                    Vector3.Lerp(playerBody.velocity, Vector3.zero, _hardbrakeStrength * Time.fixedDeltaTime);
             }
             
             //Pitch and roll
@@ -167,6 +207,23 @@ public class PlayerMovement : MonoBehaviour
                 
                 transform.RotateAround(transform.position, playerCamera.transform.forward, -roll);
                 transform.RotateAround(transform.position, playerCamera.transform.right, pitch);
+            }
+            //Up down left right
+            if (_leftMoveVector != Vector2.zero)
+            {
+                float forwards = _leftMoveVector.y;
+                float sideways = _leftMoveVector.x;
+                
+                Vector3 movement = (playerCamera.transform.up * forwards + playerCamera.transform.right * sideways).normalized;
+                playerBody.AddForce((movement * (Time.fixedDeltaTime * _manoverSpeed))); 
+            }
+            //Forwards movement
+            if (forwardsBool)
+            {
+                Vector3 midpoint = (leftController.position + rightController.position) / 2;
+                Vector3 throttle = (midpoint - transform.position);
+                float throttleFloat = throttle.magnitude;
+                playerBody.AddForce((playerCamera.transform.forward * (Time.fixedDeltaTime * (_flightSpeed * throttleFloat)))); 
             }
                 
         }
@@ -208,6 +265,26 @@ public class PlayerMovement : MonoBehaviour
     {
         _rightSecondary = false;
     }
+
+    private void OnRightGrabPerformed(InputAction.CallbackContext context)
+    {
+        _rightGrab = true;
+    }
+    
+    private void OnRightGrabCanceled(InputAction.CallbackContext context)
+    {
+        _rightGrab = false;
+    }
+    
+    private void OnRightTriggerPerformed(InputAction.CallbackContext context)
+    {
+        _rightTrigger = true;
+    }
+    
+    private void OnRightTriggerCanceled(InputAction.CallbackContext context)
+    {
+        _rightTrigger = false;
+    }
     
     //LeftHand
     private void OnLeftMovementPerformed(InputAction.CallbackContext context)
@@ -239,6 +316,26 @@ public class PlayerMovement : MonoBehaviour
     private void OnLeftSecondaryCanceled(InputAction.CallbackContext context)
     {
         _leftSecondary = false;
+    }
+    
+    private void OnLeftGrabPerformed(InputAction.CallbackContext context)
+    {
+        _leftGrab = true;
+    }
+    
+    private void OnLeftGrabCanceled(InputAction.CallbackContext context)
+    {
+        _leftGrab = false;
+    }
+    
+    private void OnLeftTriggerPerformed(InputAction.CallbackContext context)
+    {
+        _leftTrigger = true;
+    }
+    
+    private void OnLeftTriggerCanceled(InputAction.CallbackContext context)
+    {
+        _leftTrigger = false;
     }
     
 }

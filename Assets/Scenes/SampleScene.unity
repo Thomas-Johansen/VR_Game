@@ -7703,7 +7703,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8684deed087c49340a39d3e2f01e4856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brakeStrength: 5
+  _walkSpeed: 500
+  _jumpStrength: 250
+  _maxSpeed: 10
+  brakeStrength: 0.5
+  hardBrakeStrength: 1
+  _gravityForce: 490.5
+  _pitchSpeed: 30
+  _rollSpeed: 30
+  _manoverSpeed: 100
   playerBody: {fileID: 1403076350}
   playerCamera: {fileID: 1892902769}
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}

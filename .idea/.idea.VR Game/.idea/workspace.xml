@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Pitch + roll now works, added sun bloom effect to vr camera">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +123,7 @@
       <workItem from="1716081213726" duration="8897000" />
       <workItem from="1716222444523" duration="12610000" />
       <workItem from="1716963453534" duration="4450000" />
-      <workItem from="1716983510587" duration="3213000" />
+      <workItem from="1716983510587" duration="9564000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -277,7 +279,14 @@
       <option name="presentableId" value="LOCAL−00022" />
       <updated>1716965969828</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL−00023" summary="Pitch + roll now works, added sun bloom effect to vr camera">
+      <option name="closed" value="true" />
+      <created>1716990278983</created>
+      <option name="number" value="LOCAL−00023" />
+      <option name="presentableId" value="LOCAL−00023" />
+      <updated>1716990278983</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +324,7 @@
     <MESSAGE value="Added skybox, and worked on post processing shader for atmosphere effect" />
     <MESSAGE value="Started work on flying code. Added hover effect when not moving while in flying mode" />
     <MESSAGE value="Started work on pitch and yaw, not working correctly currently" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on pitch and yaw, not working correctly currently" />
+    <MESSAGE value="Pitch + roll now works, added sun bloom effect to vr camera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pitch + roll now works, added sun bloom effect to vr camera" />
   </component>
 </project>
