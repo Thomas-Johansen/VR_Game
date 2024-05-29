@@ -113,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
             UnityEngine.Quaternion targetRotation = UnityEngine.Quaternion.FromToRotation(transform.up, targetUp) * transform.rotation;
 
             // Apply the rotation smoothly (optional)
-            //transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
-            transform.rotation = targetRotation;
+            transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+            //transform.rotation = targetRotation;
             
             playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce));
             
@@ -165,20 +165,8 @@ public class PlayerMovement : MonoBehaviour
                 float pitch = _rightMoveVector.y * _pitchSpeed * Time.fixedDeltaTime;
                 float roll = _rightMoveVector.x * _rollSpeed * Time.fixedDeltaTime;
                 
-                // Get the camera's forward and right vectors
-                Vector3 cameraForward = Vector3.ProjectOnPlane(playerCamera.transform.forward, playerBody.transform.up).normalized;
-                Vector3 cameraRight = Vector3.ProjectOnPlane(playerCamera.transform.right, playerBody.transform.up).normalized;
-                
-
-                // Normalize the vectors
-                cameraForward.Normalize();
-                cameraRight.Normalize();
-                
-                // Calculate pitch and roll rotations
-                UnityEngine.Quaternion pitchRotation = UnityEngine.Quaternion.AngleAxis(pitch, cameraRight);
-                UnityEngine.Quaternion rollRotation = UnityEngine.Quaternion.AngleAxis(roll, -cameraForward);
-                
-                playerBody.MoveRotation(playerBody.rotation * pitchRotation * rollRotation);
+                transform.RotateAround(transform.position, playerCamera.transform.forward, -roll);
+                transform.RotateAround(transform.position, playerCamera.transform.right, pitch);
             }
                 
         }
