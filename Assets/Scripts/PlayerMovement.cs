@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody playerBody;
     public Transform leftController;
     public Transform rightController;
+    public GameObject Energy1;
+    public GameObject Energy2;
+    public GameObject Energy3;
+    
    
     [SerializeField] private Camera playerCamera;
 
@@ -119,7 +123,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Ki blast
+        Vector3 midpoint = (Energy1.transform.position + Energy2.transform.position) / 2;
+        Vector3 direction = Energy2.transform.position - Energy1.transform.position;
+        Energy3.transform.position = midpoint;
+        Energy3.transform.up = direction;
+        Energy3.transform.localScale = new Vector3(1, direction.magnitude * 0.5f, 1);
+
 
     }
 
@@ -223,7 +233,7 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 midpoint = (leftController.position + rightController.position) / 2;
                 Vector3 throttle = (midpoint - transform.position);
                 float throttleFloat = throttle.magnitude;
-                playerBody.AddForce((playerCamera.transform.forward * ((Time.fixedDeltaTime * _flightSpeed) * (throttleFloat * throttleFloat)))); 
+                playerBody.AddForce((playerCamera.transform.forward * ((Time.fixedDeltaTime * _flightSpeed) * (throttleFloat * throttleFloat * throttleFloat)))); 
             }
                 
         }
