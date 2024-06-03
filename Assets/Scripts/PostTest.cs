@@ -10,13 +10,13 @@ public class PostTest : MonoBehaviour
     public Shader postProcessShader;
     private Material postProcessMaterial;
 
-    [SerializeField] public Vector3 planetPosition = new Vector3(0, -75, -100);
-    [SerializeField] public float planetRadius = 250;
-    [SerializeField] public float atmosRadius = 400;
-    [SerializeField] public int numInScatteringPoints = 1;
-    [SerializeField] public int numOpticalDepthPoints = 1;
-    [SerializeField] public Vector3 lightDirection = new Vector3(0, -1, 0);
-    [SerializeField] public float densityFalloff = 1.0f;
+    [SerializeField] public Vector3 planetPosition = new Vector3(0, 0, 0);
+    [SerializeField] public float planetRadius = 200;
+    [SerializeField] public float atmosRadius = 300;
+    [SerializeField] public int numInScatteringPoints = 10;
+    [SerializeField] public int numOpticalDepthPoints = 10;
+    [SerializeField] public Vector3 lightDirection = new Vector3(0, 1, 0);
+    [SerializeField] public float densityFalloff = 6.0f;
     private int _planetCentreID;
     private int _planetRadiusID;
     private int _atmosphereRadiusID;

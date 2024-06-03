@@ -223,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 midpoint = (leftController.position + rightController.position) / 2;
                 Vector3 throttle = (midpoint - transform.position);
                 float throttleFloat = throttle.magnitude;
-                playerBody.AddForce((playerCamera.transform.forward * (Time.fixedDeltaTime * (_flightSpeed * throttleFloat)))); 
+                playerBody.AddForce((playerCamera.transform.forward * ((Time.fixedDeltaTime * _flightSpeed) * (throttleFloat * throttleFloat)))); 
             }
                 
         }

@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Added rest of basic flight controls" />
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PostTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PostTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OculusSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OculusSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +126,8 @@
       <workItem from="1716081213726" duration="8897000" />
       <workItem from="1716222444523" duration="12610000" />
       <workItem from="1716963453534" duration="4450000" />
-      <workItem from="1716983510587" duration="9935000" />
+      <workItem from="1716983510587" duration="10570000" />
+      <workItem from="1717410853799" duration="3919000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -289,7 +297,14 @@
       <option name="presentableId" value="LOCAL−00024" />
       <updated>1717013494720</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL−00025" summary="and unity workspace">
+      <option name="closed" value="true" />
+      <created>1717013524332</created>
+      <option name="number" value="LOCAL−00025" />
+      <option name="presentableId" value="LOCAL−00025" />
+      <updated>1717013524332</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,6 +344,7 @@
     <MESSAGE value="Started work on pitch and yaw, not working correctly currently" />
     <MESSAGE value="Pitch + roll now works, added sun bloom effect to vr camera" />
     <MESSAGE value="Added rest of basic flight controls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added rest of basic flight controls" />
+    <MESSAGE value="and unity workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="and unity workspace" />
   </component>
 </project>
