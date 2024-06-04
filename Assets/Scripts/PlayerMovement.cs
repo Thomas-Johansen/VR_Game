@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isFlying = false;
     private bool _doJump = false;
     private double _hoverNumber = 0;
+    private float _chargeLevel = 0;
     
     [SerializeField]private int _walkSpeed = 500;
     [SerializeField]private int _jumpStrength = 250;
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Energy1;
     public GameObject Energy2;
     public GameObject Energy3;
+    
     
    
     [SerializeField] private Camera playerCamera;
@@ -116,13 +119,41 @@ public class PlayerMovement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    { 
+        Energy1.SetActive(false);
+        Energy2.SetActive(false);
+        Energy3.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 center = (leftController.transform.position + rightController.transform.position) / 2;
+        Energy1.transform.position = center;
+        if (_leftTrigger)
+        {
+            if (_chargeLevel < 0.2)
+            {
+                _chargeLevel += 0.0001f;
+                Energy1.SetActive(true);
+                Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);   
+            }
+        }
+        else if (_chargeLevel >= 0.2)
+        {
+            
+        }
+        else if(_chargeLevel > 0)
+        {
+            _chargeLevel -= 0.0001f;
+            Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);
+        }
+        else
+        {
+            Energy1.SetActive(false);
+        }
+        
+        
         //Ki blast
         Vector3 midpoint = (Energy1.transform.position + Energy2.transform.position) / 2;
         Vector3 direction = Energy2.transform.position - Energy1.transform.position;

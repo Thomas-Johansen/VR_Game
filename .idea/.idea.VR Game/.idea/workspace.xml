@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Given up on atmosphere post process for now, fixed bloom, now works on headset, might have repercausions for performance later, setting is in xr management">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
@@ -29,13 +29,13 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PostTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/XR/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Controllers/ActionBasedController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Locomotion/Continuous/ActionBasedContinuousMoveProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Locomotion/LocomotionSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/ProjectSettings/GraphicsSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -122,7 +122,8 @@
       <workItem from="1716222444523" duration="12610000" />
       <workItem from="1716963453534" duration="4450000" />
       <workItem from="1716983510587" duration="10570000" />
-      <workItem from="1717410853799" duration="5574000" />
+      <workItem from="1717410853799" duration="5746000" />
+      <workItem from="1717507719350" duration="2759000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -306,7 +307,14 @@
       <option name="presentableId" value="LOCAL−00026" />
       <updated>1717421440832</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL−00027" summary="Started work on energy blast">
+      <option name="closed" value="true" />
+      <created>1717423350307</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1717423350307</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +330,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added basic player object, containing XR origin, collider, rigidbody and controller models" />
     <MESSAGE value="Added player movement script, not completed yet" />
     <MESSAGE value="In short, problems. To expand... transform is affecting camera not player transform" />
     <MESSAGE value="Basic movement completed. Emphasis on basic, the player can use left thumbstick to move in the direction they are looking" />
@@ -347,6 +354,7 @@
     <MESSAGE value="Added rest of basic flight controls" />
     <MESSAGE value="and unity workspace" />
     <MESSAGE value="Given up on atmosphere post process for now, fixed bloom, now works on headset, might have repercausions for performance later, setting is in xr management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Given up on atmosphere post process for now, fixed bloom, now works on headset, might have repercausions for performance later, setting is in xr management" />
+    <MESSAGE value="Started work on energy blast" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work on energy blast" />
   </component>
 </project>
