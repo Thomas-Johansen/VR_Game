@@ -14,7 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private bool _isFlying = false;
     private bool _doJump = false;
     private double _hoverNumber = 0;
+    private bool _attackActive = false;
     private float _chargeLevel = 0;
+    private Vector3 _initialDirection;
     
     [SerializeField]private int _walkSpeed = 500;
     [SerializeField]private int _jumpStrength = 250;
@@ -26,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private float _rollSpeed = 30f;
     [SerializeField]private float _manoverSpeed = 100f;
     [SerializeField]private float _flightSpeed = 200f;
-
+    [SerializeField]private float _projectileSpeed = 10f;
 
     public Rigidbody playerBody;
     public Transform leftController;
@@ -128,38 +130,66 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 center = (leftController.transform.position + rightController.transform.position) / 2;
-        Energy1.transform.position = center;
-        if (_leftTrigger)
+        if (!_attackActive)
         {
-            if (_chargeLevel < 0.2)
+            if (_leftTrigger)
             {
-                _chargeLevel += 0.0001f;
-                Energy1.SetActive(true);
-                Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);   
+                if (_chargeLevel < 0.2)
+                {
+                    _chargeLevel += 0.0001f;
+                    Energy1.SetActive(true);
+                    Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);   
+                }
             }
-        }
-        else if (_chargeLevel >= 0.2)
-        {
-            
-        }
-        else if(_chargeLevel > 0)
-        {
-            _chargeLevel -= 0.0001f;
-            Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);
+            else if (_chargeLevel >= 0.2)
+            {
+                _attackActive = true;
+                _initialDirection = playerCamera.transform.forward;
+                Energy2.transform.position = playerBody.transform.position + (_initialDirection * 2);
+                Energy2.SetActive(true);
+                Energy3.SetActive(true);
+            }
+            else if(_chargeLevel > 0)
+            {
+                _chargeLevel -= 0.0001f;
+                Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);
+                if (_chargeLevel <= 0)
+                {
+                    Energy1.SetActive(false);
+                }
+            }
         }
         else
         {
-            Energy1.SetActive(false);
+            float energySize =  (leftController.position - rightController.position).magnitude;
+            
+            Energy2.transform.position += _initialDirection * (Time.deltaTime * _projectileSpeed);
+            
+            //Moves the beam part
+            Vector3 midpoint = (Energy1.transform.position + Energy2.transform.position) / 2;
+            Vector3 direction = Energy2.transform.position - Energy1.transform.position;
+            Energy3.transform.position = midpoint;
+            Energy3.transform.up = direction;
+            Energy3.transform.localScale = new Vector3(energySize, direction.magnitude * 0.5f, energySize);
+            
+            Energy1.transform.localScale = new Vector3(energySize, energySize, energySize);
+
+            if (_leftTrigger)
+            {
+                _attackActive = false;
+                Energy2.SetActive(false);
+                Energy3.SetActive(false);
+                _chargeLevel = 0.19f;
+            }
         }
         
         
+        
         //Ki blast
-        Vector3 midpoint = (Energy1.transform.position + Energy2.transform.position) / 2;
-        Vector3 direction = Energy2.transform.position - Energy1.transform.position;
-        Energy3.transform.position = midpoint;
-        Energy3.transform.up = direction;
-        Energy3.transform.localScale = new Vector3(1, direction.magnitude * 0.5f, 1);
+        Vector3 center = (leftController.transform.position + rightController.transform.position) / 2;
+        Energy1.transform.position = center;
+        
+       
 
 
     }
