@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using DefaultNamespace;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -199,27 +200,34 @@ public class PlayerMovement : MonoBehaviour
 
         if (!_isFlying) // Walking Code
         {
-            //Multiple use varables
-            
-            
-            
             //Gravity
-            Vector3 planetCentre = new Vector3(0, 0, 0);
-
-            // Calculate the direction from the player to the planet
-            Vector3 gravityDirection = (planetCentre - transform.position).normalized;
-
-            // Calculate the target up vector (opposite of gravity direction)
-            Vector3 targetUp = -gravityDirection;
-
-            // Rotate the player to align its up vector with the target up vector
-            UnityEngine.Quaternion targetRotation = UnityEngine.Quaternion.FromToRotation(transform.up, targetUp) * transform.rotation;
-
-            // Apply the rotation smoothly (optional)
-            transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
-            //transform.rotation = targetRotation;
+            bool hasGravity = false;
+            Vector3 planetCentre = new Vector3(0,0,0);
             
-            playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce));
+            bool planetProximity = false;
+            if ((transform.position - Planets.EarthCenter).magnitude < 400 & Planets.IsActiveEarth)
+            {
+                hasGravity = true;
+                planetCentre = Planets.EarthCenter;
+            }
+            
+            if (hasGravity)
+            {
+                // Calculate the direction from the player to the planet
+                Vector3 gravityDirection = (planetCentre - transform.position).normalized;
+
+                // Calculate the target up vector (opposite of gravity direction)
+                Vector3 targetUp = -gravityDirection;
+
+                // Rotate the player to align its up vector with the target up vector
+                UnityEngine.Quaternion targetRotation = UnityEngine.Quaternion.FromToRotation(transform.up, targetUp) * transform.rotation;
+
+                // Apply the rotation smoothly (optional)
+                transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+                //transform.rotation = targetRotation;
+            
+                playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce));  
+            }
             
             //Movement
             if (_leftMoveVector != Vector2.zero && playerBody.velocity.magnitude < _maxSpeed)
