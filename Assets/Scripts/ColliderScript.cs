@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class ColliderScript : MonoBehaviour
@@ -41,6 +42,7 @@ public class ColliderScript : MonoBehaviour
             {
                 sizeMax = true;
                 currentObject.SetActive(false);
+                Planets.makeUnactive(currentObject.gameObject.name);
             }
             else if (size > 0)
             {

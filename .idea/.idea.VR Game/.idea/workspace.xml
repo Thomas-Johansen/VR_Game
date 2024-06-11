@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Basic beam energy attack and collision completed">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/planets.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/planets.cs.meta" afterDir="false" />
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColliderScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ColliderScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Planets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Planets.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +129,8 @@
       <workItem from="1716983510587" duration="10570000" />
       <workItem from="1717410853799" duration="5746000" />
       <workItem from="1717507719350" duration="2918000" />
-      <workItem from="1718032141543" duration="14747000" />
+      <workItem from="1718032141543" duration="16444000" />
+      <workItem from="1718119540239" duration="3743000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -331,7 +335,14 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1718054939927</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="Refactored player movement so begin support for multiple planets, and gravitational zones">
+      <option name="closed" value="true" />
+      <created>1718058222789</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1718058222789</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +358,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Basic movement completed. Emphasis on basic, the player can use left thumbstick to move in the direction they are looking" />
     <MESSAGE value="Wops, had not actually added the Player movement script to earlier commits. Anyhow, tried fixing headset rotation also rotating the player object, not working yet" />
     <MESSAGE value="1 step forwards 2 steps back" />
     <MESSAGE value="So close but so far" />
@@ -372,6 +382,7 @@
     <MESSAGE value="Started work on energy blast" />
     <MESSAGE value="Continued work on energy attack" />
     <MESSAGE value="Basic beam energy attack and collision completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic beam energy attack and collision completed" />
+    <MESSAGE value="Refactored player movement so begin support for multiple planets, and gravitational zones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored player movement so begin support for multiple planets, and gravitational zones" />
   </component>
 </project>

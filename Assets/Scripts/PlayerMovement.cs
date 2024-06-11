@@ -203,12 +203,29 @@ public class PlayerMovement : MonoBehaviour
             //Gravity
             bool hasGravity = false;
             Vector3 planetCentre = new Vector3(0,0,0);
+            float gravityForce = 0;
             
-            bool planetProximity = false;
             if ((transform.position - Planets.EarthCenter).magnitude < 400 & Planets.IsActiveEarth)
             {
                 hasGravity = true;
                 planetCentre = Planets.EarthCenter;
+                gravityForce = 1;
+            } else if ((transform.position - Planets.MoonCenter).magnitude < 100 & Planets.IsActiveMoon)
+            {
+                hasGravity = true;
+                planetCentre = Planets.MoonCenter;
+                gravityForce = 0.4f;
+            } else if ((transform.position - Planets.KaiCenter).magnitude < 200 & Planets.IsActiveKai)
+            {
+                hasGravity = true;
+                planetCentre = Planets.KaiCenter;
+                gravityForce = 1.2f;
+            }
+            else if ((transform.position - Planets.SunCenter).magnitude < 3000 & Planets.IsActiveSun)
+            {
+                hasGravity = true;
+                planetCentre = Planets.SunCenter;
+                gravityForce = 1.2f;
             }
             
             if (hasGravity)
@@ -226,7 +243,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = UnityEngine.Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
                 //transform.rotation = targetRotation;
             
-                playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce));  
+                playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce * gravityForce));  
             }
             
             //Movement
