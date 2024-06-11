@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Energy1;
     public GameObject Energy2;
     public GameObject Energy3;
+    public GameObject LeftArrow;
+    public GameObject RightArrow;
     
     
    
@@ -186,13 +188,17 @@ public class PlayerMovement : MonoBehaviour
         
         
         
-        //Ki blast
+        //Beam
         Vector3 center = (leftController.transform.position + rightController.transform.position) / 2;
         Energy1.transform.position = center;
         
        
 
-
+        
+        
+        // Pointer arrows
+        LeftArrow.transform.up = playerBody.velocity;
+        RightArrow.transform.up = (Planets.EarthCenter - transform.position);
     }
 
     private void FixedUpdate()
