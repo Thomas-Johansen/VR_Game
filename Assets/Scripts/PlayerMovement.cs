@@ -139,14 +139,14 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_leftTrigger)
             {
-                if (_chargeLevel < 0.2)
+                if (_chargeLevel < 0.3)
                 {
-                    _chargeLevel += 0.0001f;
+                    _chargeLevel += 0.1f * Time.deltaTime;
                     Energy1.SetActive(true);
                     Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);   
                 }
             }
-            else if (_chargeLevel >= 0.2)
+            else if (_chargeLevel >= 0.3)
             {
                 _attackActive = true;
                 _initialDirection = playerCamera.transform.forward;
@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if(_chargeLevel > 0)
             {
-                _chargeLevel -= 0.0001f;
+                _chargeLevel -= 0.12f * Time.deltaTime;
                 Energy1.transform.localScale = new Vector3(_chargeLevel, _chargeLevel, _chargeLevel);
                 if (_chargeLevel <= 0)
                 {
@@ -206,10 +206,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Energy4.SetActive(false);
         }
-        
-       
-
-        
         
         // Pointer arrows
         LeftArrow.transform.up = playerBody.velocity;

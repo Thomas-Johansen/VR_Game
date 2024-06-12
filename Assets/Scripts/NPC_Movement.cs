@@ -19,7 +19,7 @@ public class NPC_Movement : MonoBehaviour
     {
         if (movement < 100)
         {
-            movement += 0.05f;
+            movement += 20f * Time.deltaTime;
             transform.position += transform.forward * (speed * Time.deltaTime);
         }
         else

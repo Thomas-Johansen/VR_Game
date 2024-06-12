@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Imported one character model with texture and a few animations, no functionality yet">
+    <list default="true" id="c0a5bd56-b988-4ecb-ae10-1dfcec18f8eb" name="Changes" comment="Finished scene for version 0.1 Added target practise area and reset button for targets, and sword attack basic version">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Beerus/Beerus1@Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Beerus/Beerus1@Idle.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColliderScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ColliderScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Planets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Planets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPC_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPC_Movement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +33,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/ColliderScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Koding/Unity/VrGame/VR Game/Assets/Models/Beerus/Beerus1@Idle.fbx.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PostTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/XR/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -135,7 +130,7 @@
       <workItem from="1717507719350" duration="2918000" />
       <workItem from="1718032141543" duration="16444000" />
       <workItem from="1718119540239" duration="7021000" />
-      <workItem from="1718213815719" duration="7118000" />
+      <workItem from="1718213815719" duration="8309000" />
     </task>
     <task id="LOCAL−00001" summary="initial commit with basic openXR imports">
       <option name="closed" value="true" />
@@ -368,7 +363,14 @@
       <option name="presentableId" value="LOCAL−00033" />
       <updated>1718142532091</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL−00034" summary="Finished scene for version 0.1 Added target practise area and reset button for targets, and sword attack basic version">
+      <option name="closed" value="true" />
+      <created>1718222046320</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1718222046320</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +386,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="First actuall working version of walk logic, just using better vector math" />
     <MESSAGE value="Basic terrain for Lookout" />
     <MESSAGE value="Found minot code error that bugged out the whole movement logic" />
     <MESSAGE value="Changed movement logic to use FixedUpdate instead of Update, and to make use of Time.fixedDeltaTime" />
@@ -409,6 +410,7 @@
     <MESSAGE value="Added other celestial bodies, started work on platform for target practice or something like that" />
     <MESSAGE value="Added &quot;guide&quot; arrows, the one on the left hand shows velocity direction ,the one on the right hand shows direction to earth" />
     <MESSAGE value="Imported one character model with texture and a few animations, no functionality yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Imported one character model with texture and a few animations, no functionality yet" />
+    <MESSAGE value="Finished scene for version 0.1 Added target practise area and reset button for targets, and sword attack basic version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished scene for version 0.1 Added target practise area and reset button for targets, and sword attack basic version" />
   </component>
 </project>

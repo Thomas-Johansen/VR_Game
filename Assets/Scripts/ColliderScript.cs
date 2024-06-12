@@ -39,7 +39,7 @@ public class ColliderScript : MonoBehaviour
             explosion.transform.localScale = new Vector3(size, size, size);
             if (size < 200 & !sizeMax)
             {
-                size += 0.1f;
+                size += 0.1f * (Time.deltaTime * 200);
             } 
             else if (size >= 200 & !sizeMax)
             {
@@ -49,7 +49,7 @@ public class ColliderScript : MonoBehaviour
             }
             else if (size > 0)
             {
-                size -= 1f;
+                size -= 1f * (Time.deltaTime * 200);
             }
             else
             {
