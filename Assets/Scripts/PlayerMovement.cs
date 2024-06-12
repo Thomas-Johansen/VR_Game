@@ -25,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private float _brakeStrength = 0.5f;
     [SerializeField]private float _hardbrakeStrength = 2.5f;
     [SerializeField]private float _gravityForce = 490.5f;
-    [SerializeField]private float _pitchSpeed = 30f;
-    [SerializeField]private float _rollSpeed = 30f;
+    [SerializeField]private float _pitchSpeed = 45f;
+    [SerializeField]private float _rollSpeed = 45f;
     [SerializeField]private float _manoverSpeed = 100f;
     [SerializeField]private float _flightSpeed = 200f;
-    [SerializeField]private float _projectileSpeed = 10f;
+    [SerializeField]private float _projectileSpeed = 50f;
 
     public Rigidbody playerBody;
     public Transform leftController;
@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Energy1;
     public GameObject Energy2;
     public GameObject Energy3;
+    public GameObject Energy4;
     public GameObject LeftArrow;
     public GameObject RightArrow;
     
@@ -128,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
         Energy1.SetActive(false);
         Energy2.SetActive(false);
         Energy3.SetActive(false);
+        Energy4.SetActive(false);
     }
 
     // Update is called once per frame
@@ -192,6 +194,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 center = (leftController.transform.position + rightController.transform.position) / 2;
         Energy1.transform.position = center;
         
+        //Sword
+        if (_rightTrigger)
+        {
+            Energy4.SetActive(true);
+            //This was moved to just putting the object at the disired location in scene view, but im keeping the kode in case i change my mind
+            //Energy4.transform.up = Vector3.Slerp(rightController.transform.up, rightController.transform.forward, 0.2f);
+            //Energy4.transform.position = rightController.transform.position + (rightController.up);
+        }
+        else
+        {
+            Energy4.SetActive(false);
+        }
+        
        
 
         
@@ -207,34 +222,38 @@ public class PlayerMovement : MonoBehaviour
         if (!_isFlying) // Walking Code
         {
             //Gravity
-            bool hasGravity = false;
+            int hasGravity = 0;
             Vector3 planetCentre = new Vector3(0,0,0);
             float gravityForce = 0;
             
             if ((transform.position - Planets.EarthCenter).magnitude < 400 & Planets.IsActiveEarth)
             {
-                hasGravity = true;
+                hasGravity = 1;
                 planetCentre = Planets.EarthCenter;
                 gravityForce = 1;
             } else if ((transform.position - Planets.MoonCenter).magnitude < 100 & Planets.IsActiveMoon)
             {
-                hasGravity = true;
+                hasGravity = 1;
                 planetCentre = Planets.MoonCenter;
                 gravityForce = 0.4f;
             } else if ((transform.position - Planets.KaiCenter).magnitude < 200 & Planets.IsActiveKai)
             {
-                hasGravity = true;
+                hasGravity = 1;
                 planetCentre = Planets.KaiCenter;
                 gravityForce = 1.2f;
-            }
-            else if ((transform.position - Planets.SunCenter).magnitude < 3000 & Planets.IsActiveSun)
+            } else if ((transform.position - Planets.SunCenter).magnitude < 3000 & Planets.IsActiveSun)
             {
-                hasGravity = true;
+                hasGravity = 1;
                 planetCentre = Planets.SunCenter;
                 gravityForce = 1.2f;
+            } else if ((transform.position - Planets.BeerusCenter).magnitude < 300 & Planets.IsActiveBeerus)
+            {
+                hasGravity = 2;
+                planetCentre = Planets.BeerusCenter;
+                gravityForce = 1f;
             }
             
-            if (hasGravity)
+            if (hasGravity == 1)
             {
                 // Calculate the direction from the player to the planet
                 Vector3 gravityDirection = (planetCentre - transform.position).normalized;
@@ -250,6 +269,9 @@ public class PlayerMovement : MonoBehaviour
                 //transform.rotation = targetRotation;
             
                 playerBody.AddForce(gravityDirection * (Time.fixedDeltaTime * _gravityForce * gravityForce));  
+            } else if (hasGravity == 2)
+            {
+                playerBody.AddForce(Vector3.down * (Time.fixedDeltaTime * _gravityForce * gravityForce));
             }
             
             //Movement

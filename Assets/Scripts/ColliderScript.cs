@@ -26,6 +26,9 @@ public class ColliderScript : MonoBehaviour
             explosion.SetActive(true);
             currentObject = collision.gameObject;
             explosion.transform.position = this.transform.position;
+        } else if (collision.gameObject.CompareTag("Target"))
+        {
+            collision.gameObject.SetActive(false);
         }
     }
 

@@ -16,6 +16,9 @@ namespace DefaultNamespace
         public static Vector3 KaiCenter = new Vector3(-7000, 9000, -1500);
         public static bool IsActiveKai = true;
         
+        public static Vector3 BeerusCenter = new Vector3(-5000, 3000, -3000);
+        public static bool IsActiveBeerus = true;
+        
         
         
         
