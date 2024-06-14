@@ -46,4 +46,5 @@ Certain objects are distructable from the players attacks. This would in the fut
   * **B Button**: Toggle flight/walk
   
 When in flight mode use the grip button on both controllers to move forwards.
-The acceleration amount increases based on distance between the body and the controllers.
+The acceleration amount increases based on distance between the body and the controllers.  
+Both controllers also have a small "arrow" hovering above them. The left one shows player velocity, the right one shows the direction back to earth.
